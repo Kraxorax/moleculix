@@ -23,7 +23,6 @@ public class CollisionScript : MonoBehaviour {
 
 			waveAmplitude[i] = GetComponent<Renderer>().material.GetFloat("_WaveAmplitude" + (i+1));
 			if (waveAmplitude[i] > 0)
-
 			{
 				distance[i] += speedWaveSpread;
 				GetComponent<Renderer>().material.SetFloat("_Distance" + (i+1), distance[i]);
