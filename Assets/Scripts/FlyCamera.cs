@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[AddComponentMenu("Camera/Simple Smooth Mouse Look ")]
 public class FlyCamera : MonoBehaviour {
 
 
@@ -27,7 +26,7 @@ public class FlyCamera : MonoBehaviour {
 	////Have fun and good luck with your games!
 	*/
 
-float flySpeed = 0.1f;
+public float flySpeed = 1f;
 GameObject defaultCam;
 GameObject playerObject;
 bool isEnabled;
@@ -54,19 +53,7 @@ float slowDownRatio = 0.2f;
 			flySpeed /= accelerationRatio;
 		}
 
-		//use ctrl to slow up flight
-		if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
-		{
-			ctrl = true;
-			flySpeed *= slowDownRatio;
-		}
 
-		if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
-		{
-			ctrl = false;
-			flySpeed /= slowDownRatio;
-		}
-		//
 		if (Input.GetAxis("Vertical") != 0)
 		{
 			transform.Translate(Vector3.forward * flySpeed * Input.GetAxis("Vertical"));

@@ -7,7 +7,7 @@ Properties {
 
 		_Scale ("Scale", Range(0, 10)) = 1
 		_Speed ("Speed", Range(-10, 10)) = 1
-		_Frequency ("Frequency", Range(0, 1)) = 1
+		_Frequency ("Frequency", Range(0, 10)) = 1
 
 		[HideInInspector]_WaveAmplitude1 ("WaveAmplitude1", float) = 0
 		[HideInInspector]_WaveAmplitude2 ("WaveAmplitude1", float) = 0
@@ -88,18 +88,20 @@ Properties {
 			half value0 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert2 );
 
 			// sracunamo input '_' u vremnu
-			half value1 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX1) + (v.vertex.z * _OffsetZ1));
-			half value2 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX2) + (v.vertex.z * _OffsetZ2));
-			half value3 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX3) + (v.vertex.z * _OffsetZ3));
-			half value4 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX4) + (v.vertex.z * _OffsetZ4));
-			half value5 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX5) + (v.vertex.z * _OffsetZ5));
-			half value6 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX6) + (v.vertex.z * _OffsetZ6));
-			half value7 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX7) + (v.vertex.z * _OffsetZ7));
-			half value8 = _Scale * sin(_Time.w * _Speed * _Frequency + offsetvert + (v.vertex.x * _OffsetX8) + (v.vertex.z * _OffsetZ8));
+			half value1 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX1) + (v.vertex.z * _OffsetZ1));
+
+			half value2 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX2) + (v.vertex.z * _OffsetZ2));
+			half value3 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX3) + (v.vertex.z * _OffsetZ3));
+			half value4 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX4) + (v.vertex.z * _OffsetZ4));
+			half value5 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX5) + (v.vertex.z * _OffsetZ5));
+			half value6 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX6) + (v.vertex.z * _OffsetZ6));
+			half value7 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX7) + (v.vertex.z * _OffsetZ7));
+			half value8 = _Scale * sin(_Time.w * _Speed * _Frequency + (offsetvert + offsetvert2) + (v.vertex.x * _OffsetX8) + (v.vertex.z * _OffsetZ8));
 
 			// zadamo
 			v.vertex.y += value1 * _WaveAmplitude1;
 			v.normal.x += value1 * _WaveAmplitude1;
+
 			v.vertex.y += value2 * _WaveAmplitude2;
 			v.normal.x += value2 * _WaveAmplitude2;
 			v.vertex.y += value3 * _WaveAmplitude3;
