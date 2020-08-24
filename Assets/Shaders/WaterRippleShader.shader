@@ -10,13 +10,13 @@ Properties {
 		_Frequency ("Frequency", Range(0, 10)) = 1
 
 		[HideInInspector]_WaveAmplitude1 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude2 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude3 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude4 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude5 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude6 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude7 ("WaveAmplitude1", float) = 0
-		[HideInInspector]_WaveAmplitude8 ("WaveAmplitude1", float) = 0
+		[HideInInspector]_WaveAmplitude2 ("WaveAmplitude2", float) = 0
+		[HideInInspector]_WaveAmplitude3 ("WaveAmplitude3", float) = 0
+		[HideInInspector]_WaveAmplitude4 ("WaveAmplitude4", float) = 0
+		[HideInInspector]_WaveAmplitude5 ("WaveAmplitude5", float) = 0
+		[HideInInspector]_WaveAmplitude6 ("WaveAmplitude6", float) = 0
+		[HideInInspector]_WaveAmplitude7 ("WaveAmplitude7", float) = 0
+		[HideInInspector]_WaveAmplitude8 ("WaveAmplitude8", float) = 0
 
 		[HideInInspector]_xImpact1 ("x Impact 1", float) = 0
 		[HideInInspector]_zImpact1 ("z Impact 1", float) = 0

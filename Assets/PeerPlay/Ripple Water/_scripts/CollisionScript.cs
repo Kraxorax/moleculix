@@ -41,9 +41,10 @@ public class CollisionScript : MonoBehaviour {
 		if (col.rigidbody)
 		{
 			waveNumber++;
-			if (waveNumber == 9){
+			if (waveNumber == 9) {
 				waveNumber = 1;
 			}
+			
 			waveAmplitude[waveNumber-1] = 0;
 			distance[waveNumber-1] = 0;
 
