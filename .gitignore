@@ -3,9 +3,9 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-/[Ll]ogs/
 /Assets/AssetStoreTools*
 [Ll]ibrary/
+Logs/**
 
 # Visual Studio 2015 cache directory
 /.vs/
@@ -36,3 +36,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.log
