@@ -26,16 +26,12 @@ public class FlyCamera : MonoBehaviour {
 	////Have fun and good luck with your games!
 	*/
 
-public float flySpeed = 1f;
+public float flySpeed = .1f;
 GameObject defaultCam;
 GameObject playerObject;
 bool isEnabled;
  
-bool shift;
-bool ctrl;
-float accelerationAmount = 30f;
-float accelerationRatio = 3f;
-float slowDownRatio = 0.2f;
+float accelerationRatio = .1f;
  
  
 	void Update()
@@ -43,13 +39,11 @@ float slowDownRatio = 0.2f;
 		//use shift to speed up flight
 		if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
 		{
-			shift = true;
 			flySpeed *= accelerationRatio;
 		}
 
 		if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
 		{
-			shift = false;
 			flySpeed /= accelerationRatio;
 		}
 
@@ -80,6 +74,15 @@ float slowDownRatio = 0.2f;
 		if (Input.GetKeyDown(KeyCode.M))
 			playerObject.transform.position = transform.position; //Moves the player to the flycam's position. Make sure not to just move the player's camera.
 
+		if (Input.GetMouseButtonDown(0))
+		{ // if left button pressed...
+			Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit))
+			{
+				if (!!hit.rigidbody) hit.rigidbody.AddForce(-hit.normal * 10, ForceMode.Impulse);
+			}
+		}
 
 	}
 
